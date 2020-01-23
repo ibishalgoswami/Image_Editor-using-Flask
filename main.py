@@ -49,13 +49,24 @@ from PIL import Image
 # img = img.resize((basewidth,hsize), Image.ANTIALIAS)
 # img.save('new.jpg')
 
-# Img=Image.open('red-pagoda-temple-3380967.jpg')
-# Width=Img.width-8
+# Img=Image.open('static/19.jpg')
+# Width=Img.width
 # Height=Img.height
 # size=(Width,Height)
 # Img=Img.resize(size)
 # Img.save('new_image.jpg')
 # Img.show()
+
+
+# import PIL
+# from PIL import Image
+
+# img = Image.open('static/19.jpg')
+# mywidth = img.width
+# wpercent = (mywidth/float(img.size[0]))
+# hsize = int((float(img.size[1])*float(wpercent)))
+# img = img.resize((mywidth,hsize), PIL.Image.ANTIALIAS)
+# img.save('static/new.jpg')
 
 
 
