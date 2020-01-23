@@ -1,0 +1,23 @@
+h1{
+   color:#583E2E;
+   text-align: center;
+   font-size: 2.2rem;
+   font-family: 'Roboto Mono', monospace;
+   margin-bottom: 45px;
+}
+
+h4{
+   color:#583E2E;
+   font-size: 1.2rem;
+   font-family: 'Raleway', sans-serif;
+}
+
+p{
+   font-family: 'Dosis', sans-serif;
+}
+
+.form-control{
+   height: 30px;
+   width: 120px !IMPORTANT;
+}
+

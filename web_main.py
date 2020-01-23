@@ -88,42 +88,64 @@ def imageFilteration():
     
     Img=Image.open(file)
     if option_val == 'B&W':
-
         Img=Img.convert('L')
         new_image = "static/"+'filtered'+ newfilename + '.jpg'
   
     if option_val == 'BLUR':
-         
          Img=Img.filter(ImageFilter.BoxBlur(1))
          new_image = "static/"+'filtered'+ newfilename + '.jpg'
 
     if option_val == 'CONTOUR':
-
         Img=Img.filter(ImageFilter.CONTOUR)
         new_image = "static/"+'filtered'+ newfilename + '.jpg'
     
     if option_val == 'SMOOTH':
-
         Img=Img.filter(ImageFilter.SMOOTH)
         new_image = "static/"+'filtered'+ newfilename + '.jpg'
     
     if option_val == 'SHARPEN':
-
         Img=Img.filter(ImageFilter.SHARPEN)
         new_image = "static/"+'filtered'+ newfilename + '.jpg'
 
     if option_val == 'EMBOSS':
-
         Img=Img.filter(ImageFilter.EMBOSS)
         new_image = "static/"+'filtered'+ newfilename + '.jpg'
 
     if option_val == 'EDGE_ENHANCE':
-
         Img=Img.filter(ImageFilter.EDGE_ENHANCE)
         new_image = "static/"+'filtered'+ newfilename + '.jpg'
 
     Img.save(new_image)
     return render_template('image_filteration.html')
+
+@app.route('/imageRotation/',methods=['POST'])
+def imageRotation():
+    file = request.files['file']
+    file_name = file.filename
+    file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
+    file = "static/" + file_name
+    option_val = request.form['options']
+    base = os.path.basename(file)
+    newfilename=os.path.splitext(base)[0]    
+    Img=Image.open(file)
+
+    if option_val == 'LEFT':
+        val=90
+        Img=Img.rotate(val)
+        new_image = "static/"+'rotated'+ newfilename + '.jpg'
+
+    if option_val == 'RIGHT':
+        val=270
+        Img=Img.rotate(val)
+        new_image = "static/"+'rotated'+ newfilename + '.jpg'
+  
+    if option_val == 'DOWN':
+        val=180
+        Img=Img.rotate(val)
+        new_image = "static/"+'rotated'+ newfilename + '.jpg'
+    
+    Img.save(new_image)
+    return render_template('image_rotation.html')
 
 
 if __name__ == '__main__':
