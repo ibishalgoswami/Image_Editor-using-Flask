@@ -1,8 +1,9 @@
+/* index page css starts here  */
 h1{
    color:#583E2E;
    text-align: center;
    font-size: 2.2rem;
-   font-family: 'Roboto Mono', monospace;
+   font-family: 'Roboto Mono', monospace;;
    margin-bottom: 45px;
 }
 
@@ -17,7 +18,13 @@ p{
 }
 
 .form-control{
-   height: 30px;
+   height: 33px;
    width: 120px !IMPORTANT;
 }
+.form-group .form-inline{
+   border: 1px solid #000;
+   background-color: blue;
+   color: burlywood;
+}
 
+/* index page css ends here  */
